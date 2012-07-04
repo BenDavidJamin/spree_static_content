@@ -14,7 +14,9 @@
 
     <%= f.field_container :body do %>
       <%= f.label :body %><br />
-      <%= f.text_area :body, {:class => 'fullwidth'} %>
+      <div id="page_content" class="mercury-region" data-type="editable">
+        <%= raw f.text_area :body, {:class => 'fullwidth'} %>
+      </div>
       <%= f.error_message_on :body %>
     <% end %>
 
