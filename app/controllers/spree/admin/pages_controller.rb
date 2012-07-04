@@ -8,6 +8,14 @@ class Spree::Admin::PagesController < Spree::Admin::ResourceController
   def edit
     @page = @object
   end
+  
+  def mercury_update
+    page = Page.find(params[:id])
+    page.name = params[:content][:page_name][:value]
+    page.content = params[:content][:page_content][:value]
+    page.save!
+    render text: ""
+  end
 
   private
   def expire_cache
