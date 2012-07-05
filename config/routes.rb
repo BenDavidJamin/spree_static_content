@@ -23,7 +23,9 @@ end
 Spree::Core::Engine.routes.prepend do
 
   namespace :admin do
-    resources :pages
+    resources :pages do 
+      member { post :mercury_update }
+    end
   end
 
   constraints(Spree::StaticRoot) do
